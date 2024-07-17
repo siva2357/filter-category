@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'filter-category'`, () => {
+  it(`should have as title 'filter-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('filter-category');
+    expect(app.title).toEqual('filter-app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('filter-category app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('filter-app app is running!');
   });
 });

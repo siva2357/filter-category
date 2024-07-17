@@ -1,0 +1,32 @@
+<!-- src/app/project-upload/project-upload.component.html -->
+
+<div class="container mt-4">
+  <h2>Upload Project</h2>
+  <form (ngSubmit)="submitProject()" class="mt-4">
+    <div class="form-group mt-5">
+      <label for="name">Project Name:</label>
+      <input id="name" [(ngModel)]="project.name" name="name" class="form-control" required>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="project.description" name="description" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="category">Category:</label>
+      <select id="category" [(ngModel)]="project.category" name="category" class="form-control" required>
+        <option value="" disabled selected>Select a category</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-5">
+      <label for="image">Image:</label>
+      <input type="file" id="image" (change)="onFileChange($event)" class="form-control" required>
+      <p *ngIf="project.image">{{ project.image }}</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>
